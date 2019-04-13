@@ -1,0 +1,33 @@
+#include <stdio.h>
+void f(char,char);
+
+main(){
+	char a[]="123456";	//初始化密码
+	int i;				//遍历
+	char b[10];			//存储新密码
+	char *p = a;		//指针
+	printf("旧密码:\n");
+	printf("%s\n",a);
+	printf("输入密码:\n");
+	for(i=0;i<1;i++)
+	{
+		scanf("%s",&b[i]);	//输入新密码
+	}
+	f(b,a);					//函数
+	printf("新密码:\n");	//输出新密码
+	printf("%s\n",a);
+	printf("修改成功\n");
+
+}
+
+	
+
+
+void f(char *p1,char *p2)		//定义两个指针
+{
+	for(;*p1!='\0';p1++,p2++)	//遍历
+	{
+		*p2=*p1;		//复制p1到p2
+	}
+	*p2='\0';		//'\0'for循环判断语句
+}
